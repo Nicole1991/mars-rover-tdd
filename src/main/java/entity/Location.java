@@ -19,4 +19,16 @@ public class Location {
     public int getY() {
         return y;
     }
+
+    public int getX() {
+        return x;
+    }
+
+    public Direction getDirection() {
+        return direction;
+    }
+
+    public void setY(int y) {
+        this.y = y;
+    }
 }
