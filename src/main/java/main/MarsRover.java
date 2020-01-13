@@ -22,10 +22,11 @@ public class MarsRover {
 
     private Location executionTurnLeft(Location location) {
         Direction currentDirection = location.getDirection();
-        if (currentDirection == N) {
-            location.setDirection(W);
-        } else if (currentDirection == S) {
-            location.setDirection(E);
+        switch(currentDirection) {
+            case N: location.setDirection(W); break;
+            case S: location.setDirection(E); break;
+            case E: location.setDirection(N); break;
+            case W: location.setDirection(S); break;
         }
         return location;
     }
@@ -33,7 +34,7 @@ public class MarsRover {
     private Location executionMove(Location location) {
         int currentY = location.getY();
         int currentX = location.getX();
-        switch (location.getDirection()) {
+        switch(location.getDirection()) {
             case N: location.setY(currentY + 1); break;
             case S: location.setY(currentY -1); break;
             case E: location.setX(currentX + 1); break;
