@@ -59,6 +59,6 @@ public class MarsRoverTest {
         Location newLocation = marsRover.executionInstruction(Instruction.M);
         assertEquals(-1, newLocation.getX());
         assertEquals(0, newLocation.getY());
-        assertEquals(E, newLocation.getDirection());
+        assertEquals(W, newLocation.getDirection());
     }
 }
