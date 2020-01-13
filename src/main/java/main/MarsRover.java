@@ -1,9 +1,10 @@
 package main;
 
 import entity.Location;
+import enums.Direction;
 import enums.Instruction;
 
-import static enums.Direction.W;
+import static enums.Direction.*;
 
 public class MarsRover {
     private Location location;
@@ -20,7 +21,12 @@ public class MarsRover {
     }
 
     private Location executionTurnLeft(Location location) {
-        location.setDirection(W);
+        Direction currentDirection = location.getDirection();
+        if (currentDirection == N) {
+            location.setDirection(W);
+        } else if (currentDirection == S) {
+            location.setDirection(E);
+        }
         return location;
     }
 
