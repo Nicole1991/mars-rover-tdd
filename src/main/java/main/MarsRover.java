@@ -4,13 +4,21 @@ import entity.Location;
 import enums.Direction;
 import enums.Instruction;
 
-import static enums.Direction.*;
+import java.util.List;
 
 public class MarsRover {
     private Location location;
 
     public MarsRover(Location location) {
         this.location = location;
+    }
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public void executionMultiplyInstruction(List<Instruction> instructions) {
+        instructions.forEach(this::executionInstruction);
     }
 
     public Location executionInstruction(Instruction instruction) {
