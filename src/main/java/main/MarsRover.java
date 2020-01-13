@@ -16,8 +16,21 @@ public class MarsRover {
     public Location executionInstruction(Instruction instruction) {
         if (instruction.equals(Instruction.M)) {
             return executionMove(this.location);
+        } else if (instruction.equals(Instruction.R)) {
+            return executionTurnRight(this.location);
         }
         return executionTurnLeft(this.location);
+    }
+
+    private Location executionTurnRight(Location location) {
+        Direction currentDirection = location.getDirection();
+        switch(currentDirection) {
+            case N: location.setDirection(E); break;
+            case S: location.setDirection(W); break;
+            case E: location.setDirection(S); break;
+            case W: location.setDirection(N); break;
+        }
+        return location;
     }
 
     private Location executionTurnLeft(Location location) {
