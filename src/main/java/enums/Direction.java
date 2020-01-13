@@ -3,4 +3,5 @@ package enums;
 public enum Direction {
     N,
     S,
+    E,
 }
