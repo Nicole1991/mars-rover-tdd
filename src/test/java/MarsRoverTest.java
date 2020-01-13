@@ -99,4 +99,12 @@ public class MarsRoverTest {
         Location newLocation = marsRover.executionInstruction(Instruction.L);
         assertEquals(S, newLocation.getDirection());
     }
+
+    @Test
+    public void should_return_0_0_W_when_initial_location_is_0_0_S_and_accept_turn_right_instruction() {
+        Location location = new Location(0, 0, S);
+        MarsRover marsRover = new MarsRover(location);
+        Location newLocation = marsRover.executionInstruction(Instruction.L);
+        assertEquals(W, newLocation.getDirection());
+    }
 }
