@@ -23,24 +23,16 @@ public class MarsRover {
     }
 
     private Location executionTurnRight(Location location) {
-        Direction currentDirection = location.getDirection();
-        switch(currentDirection) {
-            case N: location.setDirection(E); break;
-            case S: location.setDirection(W); break;
-            case E: location.setDirection(S); break;
-            case W: location.setDirection(N); break;
-        }
+        int currentIndexOfDirection = Direction.valueOf(location.getDirection().toString()).ordinal();
+        int newIndexOfDirection = currentIndexOfDirection + 1 > 3 ? 0 : currentIndexOfDirection + 1;
+        location.setDirection(Direction.values()[newIndexOfDirection]);
         return location;
     }
 
     private Location executionTurnLeft(Location location) {
-        Direction currentDirection = location.getDirection();
-        switch(currentDirection) {
-            case N: location.setDirection(W); break;
-            case S: location.setDirection(E); break;
-            case E: location.setDirection(N); break;
-            case W: location.setDirection(S); break;
-        }
+        int currentIndexOfDirection = Direction.valueOf(location.getDirection().toString()).ordinal();
+        int newIndexOfDirection = currentIndexOfDirection - 1 < 0 ? 3 : currentIndexOfDirection - 1;
+        location.setDirection(Direction.values()[newIndexOfDirection]);
         return location;
     }
 
