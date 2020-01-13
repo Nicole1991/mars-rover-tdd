@@ -3,9 +3,7 @@ import enums.Instruction;
 import main.MarsRover;
 import org.junit.Test;
 
-import static enums.Direction.E;
-import static enums.Direction.N;
-import static enums.Direction.S;
+import static enums.Direction.*;
 import static org.junit.Assert.assertEquals;
 
 public class MarsRoverTest {
@@ -32,7 +30,7 @@ public class MarsRoverTest {
     }
 
     @Test
-    public void should_return_0_nagetive_1_S_when_initial_location_is_0_0_S_and_accept_move_instruction() {
+    public void should_return_0_negative_1_S_when_initial_location_is_0_0_S_and_accept_move_instruction() {
         Location location = new Location(0, 0, S);
         MarsRover marsRover = new MarsRover(location);
 
@@ -49,6 +47,17 @@ public class MarsRoverTest {
 
         Location newLocation = marsRover.executionInstruction(Instruction.M);
         assertEquals(1, newLocation.getX());
+        assertEquals(0, newLocation.getY());
+        assertEquals(E, newLocation.getDirection());
+    }
+
+    @Test
+    public void should_return_negative_1_0_W_when_initial_location_is_0_0_W_and_accept_move_instruction() {
+        Location location = new Location(0, 0, W);
+        MarsRover marsRover = new MarsRover(location);
+
+        Location newLocation = marsRover.executionInstruction(Instruction.M);
+        assertEquals(-1, newLocation.getX());
         assertEquals(0, newLocation.getY());
         assertEquals(E, newLocation.getDirection());
     }
