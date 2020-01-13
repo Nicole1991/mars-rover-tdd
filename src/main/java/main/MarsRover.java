@@ -3,6 +3,8 @@ package main;
 import entity.Location;
 import enums.Instruction;
 
+import static enums.Direction.W;
+
 public class MarsRover {
     private Location location;
 
@@ -11,7 +13,15 @@ public class MarsRover {
     }
 
     public Location executionInstruction(Instruction instruction) {
-        return executionMove(this.location);
+        if (instruction.equals(Instruction.M)) {
+            return executionMove(this.location);
+        }
+        return executionTurnLeft(this.location);
+    }
+
+    private Location executionTurnLeft(Location location) {
+        location.setDirection(W);
+        return location;
     }
 
     private Location executionMove(Location location) {

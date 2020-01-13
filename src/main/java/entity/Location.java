@@ -7,9 +7,6 @@ public class Location {
     private int y;
     private Direction direction;
 
-    public Location() {
-    }
-
     public Location(int x, int y, Direction direction) {
         this.x = x;
         this.y = y;
@@ -34,5 +31,9 @@ public class Location {
 
     public void setX(int x) {
         this.x = x;
+    }
+
+    public void setDirection(Direction direction) {
+        this.direction = direction;
     }
 }
