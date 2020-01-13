@@ -14,4 +14,13 @@ public class MarsRoverTest {
         Location newLocation = marsRover.executionMove(location);
         assertEquals(1, newLocation.getY());
     }
+
+    @Test
+    public void should_return_0_2_N_when_initial_location_is_0_1_N_and_accept_move_instruction() {
+        MarsRover marsRover = new MarsRover();
+        Location location = new Location(0, 1, Direction.N);
+
+        Location newLocation = marsRover.executionMove(location);
+        assertEquals(2, newLocation.getY());
+    }
 }
