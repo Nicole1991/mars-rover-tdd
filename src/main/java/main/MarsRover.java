@@ -1,7 +1,6 @@
 package main;
 
 import entity.Location;
-import enums.Direction;
 import enums.Instruction;
 
 public class MarsRover {
@@ -18,14 +17,11 @@ public class MarsRover {
     private Location executionMove(Location location) {
         int currentY = location.getY();
         int currentX = location.getX();
-        if (location.getDirection() == Direction.N) {
-            location.setY(currentY + 1);
-        } else if (location.getDirection() == Direction.S) {
-            location.setY(currentY -1);
-        } else if (location.getDirection() == Direction.E) {
-            location.setX(currentX + 1);
-        } else if (location.getDirection() == Direction.W) {
-            location.setX(currentX - 1);
+        switch (location.getDirection()) {
+            case N: location.setY(currentY + 1); break;
+            case S: location.setY(currentY -1); break;
+            case E: location.setX(currentX + 1); break;
+            case W: location.setX(currentX -1); break;
         }
         return location;
     }
