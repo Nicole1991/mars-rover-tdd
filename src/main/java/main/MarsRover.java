@@ -30,13 +30,29 @@ public class MarsRover {
 
     public void executeInstruction(String instruction) {
         if (this.getDirection() == N) {
-            this.y += 1;
+            yAdd();
         } else if (this.getDirection() == S) {
-            this.y -= 1;
+            ySub();
         } else if (this.getDirection() == E) {
-            this.x += 1;
+            xAdd();
         } else if (this.getDirection() == W) {
-            this.x -= 1;
+            xSub();
         }
+    }
+
+    private void xSub() {
+        this.x -= 1;
+    }
+
+    private void xAdd() {
+        this.x += 1;
+    }
+
+    private void ySub() {
+        this.y -= 1;
+    }
+
+    private void yAdd() {
+        this.y += 1;
     }
 }
