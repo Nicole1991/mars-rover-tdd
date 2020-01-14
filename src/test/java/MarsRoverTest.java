@@ -92,4 +92,48 @@ public class MarsRoverTest {
         assertEquals(1, marsRover.getY());
         assertEquals(1, marsRover.getX());
     }
+
+    @Test
+    public void should_return_2_2_E_when_given_2_2_N_and_execute_instruction_turn_right() {
+        MarsRover marsRover = new MarsRover(2, 2, N);
+
+        marsRover.executeInstruction("R");
+
+        assertEquals(2, marsRover.getY());
+        assertEquals(2, marsRover.getX());
+        assertEquals(E, marsRover.getDirection());
+    }
+
+    @Test
+    public void should_return_2_2_W_when_given_2_2_S_and_execute_instruction_turn_right() {
+        MarsRover marsRover = new MarsRover(2, 2, S);
+
+        marsRover.executeInstruction("R");
+
+        assertEquals(W, marsRover.getDirection());
+        assertEquals(2, marsRover.getY());
+        assertEquals(2, marsRover.getX());
+    }
+
+    @Test
+    public void should_return_2_2_S_when_given_2_2_E_and_execute_instruction_turn_right() {
+        MarsRover marsRover = new MarsRover(2, 2, E);
+
+        marsRover.executeInstruction("R");
+
+        assertEquals(S, marsRover.getDirection());
+        assertEquals(2, marsRover.getY());
+        assertEquals(2, marsRover.getX());
+    }
+
+    @Test
+    public void should_return_2_2_N_when_given_2_2_W_and_execute_instruction_turn_right() {
+        MarsRover marsRover = new MarsRover(2, 2, W);
+
+        marsRover.executeInstruction("R");
+
+        assertEquals(N, marsRover.getDirection());
+        assertEquals(2, marsRover.getY());
+        assertEquals(2, marsRover.getX());
+    }
 }
