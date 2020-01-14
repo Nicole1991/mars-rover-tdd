@@ -25,6 +25,6 @@ public class MarsRover {
     }
 
     public void executeInstruction(String instruction) {
-
+        this.y += 1;
     }
 }
