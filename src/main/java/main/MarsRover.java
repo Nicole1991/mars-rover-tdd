@@ -8,12 +8,12 @@ import static enums.Direction.*;
 public class MarsRover {
     private int x;
     private int y;
-    private Direction Direction;
+    private Direction direction;
 
     public MarsRover(int x, int y, Direction direction) {
         this.x = x;
         this.y = y;
-        Direction = direction;
+        this.direction = direction;
     }
 
     public int getX() {
@@ -24,19 +24,16 @@ public class MarsRover {
         return y;
     }
 
-    public enums.Direction getDirection() {
-        return Direction;
+    public Direction getDirection() {
+        return this.direction;
     }
 
     public void executeInstruction(String instruction) {
-        if (this.getDirection() == N) {
-            yAdd();
-        } else if (this.getDirection() == S) {
-            ySub();
-        } else if (this.getDirection() == E) {
-            xAdd();
-        } else if (this.getDirection() == W) {
-            xSub();
+        switch (this.getDirection()) {
+            case N: yAdd(); break;
+            case S: ySub(); break;
+            case E: xAdd(); break;
+            case W: xSub(); break;
         }
     }
 
