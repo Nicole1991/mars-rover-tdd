@@ -25,6 +25,11 @@ public class MarsRover {
     }
 
     public void executeInstruction(String instruction) {
-        this.y += 1;
+        if (this.getDirection() == "N") {
+            this.y += 1;
+        }
+        else if (this.getDirection() == "S") {
+            this.y -= 1;
+        }
     }
 }
