@@ -3,9 +3,7 @@ package main;
 
 import enums.Direction;
 
-import static enums.Direction.E;
-import static enums.Direction.N;
-import static enums.Direction.S;
+import static enums.Direction.*;
 
 public class MarsRover {
     private int x;
@@ -37,6 +35,8 @@ public class MarsRover {
             this.y -= 1;
         } else if (this.getDirection() == E) {
             this.x += 1;
+        } else if (this.getDirection() == W) {
+            this.x -= 1;
         }
     }
 }
