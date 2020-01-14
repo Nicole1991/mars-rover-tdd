@@ -30,16 +30,24 @@ public class MarsRover {
 
     public void executeInstruction(String instruction) {
         if (instruction.equals("M")) {
-            switch (this.getDirection()) {
-                case N: yAdd(); break;
-                case S: ySub(); break;
-                case E: xAdd(); break;
-                case W: xSub(); break;
-            }
+            excuteMoveInstruction();
         } else {
-            int currentDirectionIndex = Direction.valueOf(this.direction.toString()).ordinal();
-            this.direction = currentDirectionIndex - 1 < 0 ? Direction.values()[3]
-                : Direction.values()[currentDirectionIndex - 1];
+            excuteTurnLeftInstruction();
+        }
+    }
+
+    private void excuteTurnLeftInstruction() {
+        int currentDirectionIndex = Direction.valueOf(this.direction.toString()).ordinal();
+        this.direction = currentDirectionIndex - 1 < 0 ? Direction.values()[3]
+            : Direction.values()[currentDirectionIndex - 1];
+    }
+
+    private void excuteMoveInstruction() {
+        switch (this.getDirection()) {
+            case N: yAdd(); break;
+            case S: ySub(); break;
+            case E: xAdd(); break;
+            case W: xSub(); break;
         }
     }
 
