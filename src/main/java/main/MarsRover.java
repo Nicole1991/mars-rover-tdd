@@ -1,12 +1,17 @@
 package main;
 
 
+import enums.Direction;
+
+import static enums.Direction.N;
+import static enums.Direction.S;
+
 public class MarsRover {
     private int x;
     private int y;
-    private String Direction;
+    private Direction Direction;
 
-    public MarsRover(int x, int y, String direction) {
+    public MarsRover(int x, int y, Direction direction) {
         this.x = x;
         this.y = y;
         Direction = direction;
@@ -20,15 +25,14 @@ public class MarsRover {
         return y;
     }
 
-    public String getDirection() {
+    public enums.Direction getDirection() {
         return Direction;
     }
 
     public void executeInstruction(String instruction) {
-        if (this.getDirection() == "N") {
+        if (this.getDirection() == N) {
             this.y += 1;
-        }
-        else if (this.getDirection() == "S") {
+        } else if (this.getDirection() == S) {
             this.y -= 1;
         }
     }
