@@ -1,9 +1,7 @@
 import main.MarsRover;
 import org.junit.Test;
 
-import static enums.Direction.E;
-import static enums.Direction.N;
-import static enums.Direction.S;
+import static enums.Direction.*;
 import static org.junit.Assert.assertEquals;
 
 public class MarsRoverTest {
@@ -37,6 +35,17 @@ public class MarsRoverTest {
 
         assertEquals(2, marsRover.getX());
         assertEquals(E, marsRover.getDirection());
+        assertEquals(1, marsRover.getY());
+    }
+
+    @Test
+    public void should_return_1_1_W_when_given_2_1_W_and_execute_instruction_move() {
+        MarsRover marsRover = new MarsRover(2, 1, W);
+
+        marsRover.executeInstruction("M");
+
+        assertEquals(1, marsRover.getX());
+        assertEquals(W, marsRover.getDirection());
         assertEquals(1, marsRover.getY());
     }
 }
