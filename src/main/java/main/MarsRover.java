@@ -37,7 +37,11 @@ public class MarsRover {
                 case W: xSub(); break;
             }
         } else {
-            this.direction = W;
+            if (this.direction == N) {
+                this.direction = W;
+            } else if (this.direction == S) {
+                this.direction = E;
+            }
         }
     }
 
