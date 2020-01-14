@@ -54,9 +54,20 @@ public class MarsRoverTest {
         MarsRover marsRover = new MarsRover(1, 1, N);
 
         marsRover.executeInstruction("L");
-        assertEquals(1, marsRover.getY());
 
+        assertEquals(1, marsRover.getY());
         assertEquals(1, marsRover.getX());
         assertEquals(W, marsRover.getDirection());
+    }
+
+    @Test
+    public void should_return_1_1_E_when_given_1_1_S_and_execute_instruction_turn_left() {
+        MarsRover marsRover = new MarsRover(1, 1, S);
+
+        marsRover.executeInstruction("L");
+
+        assertEquals(E, marsRover.getDirection());
+        assertEquals(1, marsRover.getY());
+        assertEquals(1, marsRover.getX());
     }
 }
