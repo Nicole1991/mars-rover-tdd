@@ -29,11 +29,15 @@ public class MarsRover {
     }
 
     public void executeInstruction(String instruction) {
-        switch (this.getDirection()) {
-            case N: yAdd(); break;
-            case S: ySub(); break;
-            case E: xAdd(); break;
-            case W: xSub(); break;
+        if (instruction.equals("M")) {
+            switch (this.getDirection()) {
+                case N: yAdd(); break;
+                case S: ySub(); break;
+                case E: xAdd(); break;
+                case W: xSub(); break;
+            }
+        } else {
+            this.direction = W;
         }
     }
 
