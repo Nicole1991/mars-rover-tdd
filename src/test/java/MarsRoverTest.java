@@ -1,5 +1,8 @@
+import enums.Instruction;
 import main.MarsRover;
 import org.junit.Test;
+
+import java.util.Arrays;
 
 import static enums.Direction.*;
 import static enums.Instruction.L;
@@ -138,5 +141,15 @@ public class MarsRoverTest {
         assertEquals(N, marsRover.getDirection());
         assertEquals(2, marsRover.getY());
         assertEquals(2, marsRover.getX());
+    }
+
+    @Test
+    public void should_return_1_negative_1_S_when_initial_location_is_0_0_E_and_accept_move_turn_right_move_instruction() {
+        MarsRover marsRover = new MarsRover(0, 0, E);
+        marsRover.executeMultipleInstructions(Arrays.asList(Instruction.M,
+            Instruction.R, Instruction.M));
+        assertEquals(S, marsRover.getDirection());
+        assertEquals(1, marsRover.getX());
+        assertEquals(-1, marsRover.getY());
     }
 }

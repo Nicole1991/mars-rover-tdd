@@ -1,8 +1,8 @@
 package main;
 
-
 import enums.Direction;
 import enums.Instruction;
+import java.util.List;
 
 public class MarsRover {
     private int x;
@@ -25,6 +25,10 @@ public class MarsRover {
 
     public Direction getDirection() {
         return this.direction;
+    }
+
+    public void executeMultipleInstructions(List<Instruction> instructions) {
+        instructions.forEach(this::executeInstruction);
     }
 
     public void executeInstruction(Instruction instruction) {
