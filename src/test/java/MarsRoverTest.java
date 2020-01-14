@@ -35,8 +35,8 @@ public class MarsRoverTest {
 
         marsRover.executeInstruction("M");
 
-        assertEquals(1, marsRover.getX());
+        assertEquals(2, marsRover.getX());
         assertEquals(E, marsRover.getDirection());
-        assertEquals(2, marsRover.getY());
+        assertEquals(1, marsRover.getY());
     }
 }
