@@ -2,6 +2,7 @@ package main;
 
 
 import enums.Direction;
+import enums.Instruction;
 
 public class MarsRover {
     private int x;
@@ -26,15 +27,15 @@ public class MarsRover {
         return this.direction;
     }
 
-    public void executeInstruction(String instruction) {
+    public void executeInstruction(Instruction instruction) {
         switch (instruction) {
-            case "M":
+            case M:
                 executeMoveInstruction();
                 break;
-            case "L":
+            case L:
                 executeTurnLeftInstruction();
                 break;
-            case "R":
+            case R:
                 executeTurnRightInstruction();
                 break;
         }
