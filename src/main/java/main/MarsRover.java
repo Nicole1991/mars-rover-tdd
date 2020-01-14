@@ -37,15 +37,9 @@ public class MarsRover {
                 case W: xSub(); break;
             }
         } else {
-            if (this.direction == N) {
-                this.direction = W;
-            } else if (this.direction == S) {
-                this.direction = E;
-            } else if (this.direction == W) {
-                this.direction = S;
-            } else if (this.direction == E) {
-                this.direction = N;
-            }
+            int currentDirectionIndex = Direction.valueOf(this.direction.toString()).ordinal();
+            this.direction = currentDirectionIndex - 1 < 0 ? Direction.values()[3]
+                : Direction.values()[currentDirectionIndex - 1];
         }
     }
 
