@@ -3,8 +3,6 @@ package main;
 
 import enums.Direction;
 
-import static enums.Direction.*;
-
 public class MarsRover {
     private int x;
     private int y;
@@ -30,19 +28,27 @@ public class MarsRover {
 
     public void executeInstruction(String instruction) {
         if (instruction.equals("M")) {
-            excuteMoveInstruction();
-        } else {
-            excuteTurnLeftInstruction();
+            executeMoveInstruction();
+        } else if (instruction.equals("L")){
+            executeTurnLeftInstruction();
+        } else if (instruction.equals("R")) {
+            executeTurnRightInstruction();
         }
     }
 
-    private void excuteTurnLeftInstruction() {
+    private void executeTurnRightInstruction() {
+        int currentDirectionIndex = Direction.valueOf(this.direction.toString()).ordinal();
+        this.direction = currentDirectionIndex + 1 > 3 ? Direction.values()[0]
+            : Direction.values()[currentDirectionIndex + 1];
+    }
+
+    private void executeTurnLeftInstruction() {
         int currentDirectionIndex = Direction.valueOf(this.direction.toString()).ordinal();
         this.direction = currentDirectionIndex - 1 < 0 ? Direction.values()[3]
             : Direction.values()[currentDirectionIndex - 1];
     }
 
-    private void excuteMoveInstruction() {
+    private void executeMoveInstruction() {
         switch (this.getDirection()) {
             case N: yAdd(); break;
             case S: ySub(); break;
