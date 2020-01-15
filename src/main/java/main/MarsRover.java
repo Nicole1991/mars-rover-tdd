@@ -1,6 +1,7 @@
 package main;
 
 import entity.Location;
+import enums.Instruction;
 
 public class MarsRover {
     private Location location;
@@ -9,8 +10,24 @@ public class MarsRover {
         this.location = location;
     }
 
-    public Location executeInstruction(String instruction) {
-        this.location.setY(this.location.getY() + 1);
+    public Location executionInstruction(Instruction instruction) {
+        if (instruction.equals(Instruction.M)) {
+            return this.executionMoveInstruction();
+        } else if (instruction.equals(Instruction.L)) {
+            return this.executionTurnLeftInstruction();
+        }
+        return this.executionTurnRightInstruction();
+    }
+
+    private Location executionTurnRightInstruction() {
+        return this.location;
+    }
+
+    private Location executionTurnLeftInstruction() {
+        return this.location;
+    }
+
+    private Location executionMoveInstruction() {
         return this.location;
     }
 }
