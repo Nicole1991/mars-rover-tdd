@@ -38,7 +38,7 @@ public class Location {
         this.y += 1;
     }
 
-    public void addX() {
+    private void addX() {
         this.x += 1;
     }
 

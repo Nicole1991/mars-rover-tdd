@@ -13,12 +13,10 @@ public class MarsRover {
     }
 
     public Location executionInstruction(Instruction instruction) {
-        if (instruction.equals(Instruction.M)) {
-            this.location.moveInstruction();
-        } else if (instruction.equals(Instruction.L)) {
-            this.location.turnLeftInstruction();
-        } else {
-            this.location.turnRightInstruction();
+        switch (instruction) {
+            case M: this.location.moveInstruction(); break;
+            case L: this.location.turnLeftInstruction(); break;
+            case R: this.location.turnRightInstruction(); break;
         }
         return this.location;
     }
