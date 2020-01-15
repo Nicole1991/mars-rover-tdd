@@ -137,7 +137,7 @@ public class MarsRoverTest {
         assertEquals(S, newLocation.getDirection());
     }
 
-   /* @Test
+    @Test
     public void should_return_1_negative_1_S_when_initial_location_is_0_0_E_and_accept_move_turn_right_move_instruction() {
         Location location = new Location(0, 0, E);
         MarsRover marsRover = new MarsRover(location);
@@ -146,6 +146,6 @@ public class MarsRoverTest {
         assertEquals(S, marsRover.getLocation().getDirection());
         assertEquals(1, marsRover.getLocation().getX());
         assertEquals(-1, marsRover.getLocation().getY());
-    }*/
+    }
 
 }
