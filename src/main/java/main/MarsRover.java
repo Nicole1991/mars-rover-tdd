@@ -28,6 +28,7 @@ public class MarsRover {
     }
 
     private Location executionMoveInstruction() {
+        this.location.moveInstruction();
         return this.location;
     }
 }
