@@ -2,7 +2,6 @@ package entity;
 
 import enums.Direction;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -23,6 +22,10 @@ public class Location {
         }
     }
 
+    public void turnLeftInstruction() {
+        this.direction = Direction.valueOf(direction.getTurnLeft());
+    }
+
     private void subX() {
         this.x -= 1;
     }
@@ -37,5 +40,9 @@ public class Location {
 
     public void addX() {
         this.x += 1;
+    }
+
+    public void turnRightInstruction() {
+        this.direction = Direction.valueOf(direction.getTurnRight());
     }
 }

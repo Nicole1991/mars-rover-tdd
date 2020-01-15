@@ -20,10 +20,12 @@ public class MarsRover {
     }
 
     private Location executionTurnRightInstruction() {
+        this.location.turnRightInstruction();
         return this.location;
     }
 
     private Location executionTurnLeftInstruction() {
+        this.location.turnLeftInstruction();
         return this.location;
     }
 
