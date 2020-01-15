@@ -8,7 +8,7 @@ import static org.junit.Assert.assertEquals;
 public class MarsRoverTest {
     @Test
     public void should_return_1_1_N_given_1_0_N_when_execute_move_instruction() {
-        MarsRover marsRover = new MarsRover();
+        MarsRover marsRover = new MarsRover(new Location(1, 0, N));
 
         Location location = marsRover.executeInstruction("M");
 
